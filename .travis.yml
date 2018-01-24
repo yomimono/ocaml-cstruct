@@ -10,6 +10,7 @@ env:
   - TESTS="true"
   - DEPOPTS="ppx_cstruct cstruct-lwt cstruct-async cstruct-unix"
   - PACKAGE="cstruct"
+  - FORK_USER="yomimono" FORK_BRANCH="always_depext"
   matrix:
   - DISTRO="debian-stable" OCAML_VERSION="4.05.0"
   - DISTRO="debian-testing" OCAML_VERSION="4.03.0"
