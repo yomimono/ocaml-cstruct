@@ -6,6 +6,7 @@ install: wget https://raw.githubusercontent.com/ocaml/ocaml-travisci-skeleton/ma
 script: bash -ex ./.travis-docker.sh
 env:
   global:
+  - FORK_USER="yomimono" FORK_BRANCH="revdep-pins"
   - PINS="cstruct:. cstruct-async:. cstruct-lwt:. cstruct-unix:. ppx_cstruct:."
   - TESTS="true"
   - REVDEPS="ppx_cstruct cstruct-lwt cstruct-async cstruct-unix"
