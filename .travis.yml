@@ -8,7 +8,7 @@ env:
   global:
   - PINS="cstruct:. cstruct-async:. cstruct-lwt:. cstruct-unix:. ppx_cstruct:."
   - TESTS="true"
-  - DEPOPTS="ppx_cstruct cstruct-lwt cstruct-async cstruct-unix"
+  - REVDEPS="ppx_cstruct cstruct-lwt cstruct-async cstruct-unix"
   - PACKAGE="cstruct"
   matrix:
   - DISTRO="debian-stable" OCAML_VERSION="4.05.0"
