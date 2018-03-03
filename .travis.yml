@@ -1,20 +1,30 @@
 language: c
-sudo: false
+install: wget https://raw.githubusercontent.com/ocaml/ocaml-ci-scripts/master/.travis-docker.sh
+script: bash -ex .travis-docker.sh
 services:
-  - docker
-install: wget https://raw.githubusercontent.com/ocaml/ocaml-travisci-skeleton/master/.travis-docker.sh
-script: bash -ex ./.travis-docker.sh
+- docker
 env:
   global:
-  - PINS="cstruct:. cstruct-async:. cstruct-lwt:. cstruct-unix:. ppx_cstruct:."
-  - TESTS="true"
-  - DEPOPTS="ppx_cstruct cstruct-lwt cstruct-async cstruct-unix"
-  - PACKAGE="cstruct"
+  - PINS="cstruct:. ppx_cstruct:. cstruct-async:. cstruct-unix:. cstruct-lwt:."
+  - DISTRO="debian-stable"
   matrix:
-  - DISTRO="debian-stable" OCAML_VERSION="4.05.0"
-  - DISTRO="debian-testing" OCAML_VERSION="4.03.0"
-  - DISTRO="debian-unstable" OCAML_VERSION="4.04.2"
-  - DISTRO="debian-unstable" OCAML_VERSION="4.06.0"
-  - DISTRO="ubuntu-16.04" OCAML_VERSION="4.05.0"
-  - DISTRO="alpine" OCAML_VERSION="4.06.0"
-  - DISTRO="fedora-25" OCAML_VERSION="4.03.0"
+  - PACKAGE="cstruct" OCAML_VERSION="4.03.0"
+  - PACKAGE="cstruct" OCAML_VERSION="4.04.2"
+  - PACKAGE="cstruct" OCAML_VERSION="4.05.0"
+  - PACKAGE="cstruct" OCAML_VERSION="4.06.0"
+  - PACKAGE="ppx_cstruct" OCAML_VERSION="4.03.0"
+  - PACKAGE="ppx_cstruct" OCAML_VERSION="4.04.2"
+  - PACKAGE="ppx_cstruct" OCAML_VERSION="4.05.0"
+  - PACKAGE="ppx_cstruct" OCAML_VERSION="4.06.0"
+  - PACKAGE="cstruct-async" OCAML_VERSION="4.03.0"
+  - PACKAGE="cstruct-async" OCAML_VERSION="4.04.2"
+  - PACKAGE="cstruct-async" OCAML_VERSION="4.05.0"
+  - PACKAGE="cstruct-async" OCAML_VERSION="4.06.0"
+  - PACKAGE="cstruct-unix" OCAML_VERSION="4.03.0"
+  - PACKAGE="cstruct-unix" OCAML_VERSION="4.04.2"
+  - PACKAGE="cstruct-unix" OCAML_VERSION="4.05.0"
+  - PACKAGE="cstruct-unix" OCAML_VERSION="4.06.0"
+  - PACKAGE="cstruct-lwt" OCAML_VERSION="4.03.0"
+  - PACKAGE="cstruct-lwt" OCAML_VERSION="4.04.2"
+  - PACKAGE="cstruct-lwt" OCAML_VERSION="4.05.0"
+  - PACKAGE="cstruct-lwt" OCAML_VERSION="4.06.0"
